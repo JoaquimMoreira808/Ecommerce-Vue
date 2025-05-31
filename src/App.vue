@@ -1,10 +1,9 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import Navbar from "./components/FooterComponent.vue";
 </script>
 
 <template>
-  
+  <router-view></router-view>
 </template>
 
-<style>
-</style>
+<style></style>
