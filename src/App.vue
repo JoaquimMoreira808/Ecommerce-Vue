@@ -1,9 +1,17 @@
 <script setup>
-import Navbar from "./components/FooterComponent.vue";
+import FooterComponent from "./components/FooterComponent.vue";
 </script>
 
 <template>
-  <router-view></router-view>
+  <div class="app-container">
+    <h2>demais informações</h2>
+    <router-view></router-view>
+
+
+  </div>
+  <FooterComponent/>
 </template>
 
-<style></style>
+<style>
+
+</style>
