@@ -7,20 +7,39 @@
       </h1>
 
       <ul class="flex text-1xl space-x-6 text-gray-700">
-        <li><a href="#" class="hover:text-black hover:scale-105 transition duration-200">Home</a></li>
-        <li><a href="#" class="hover:text-black hover:scale-105 transition duration-200">Products</a></li>
-        <li><a href="#" class="hover:text-black hover:scale-105 transition duration-200">About</a></li>
-        <li><a href="#" class="hover:text-black hover:scale-105 transition duration-200">Contact</a></li>
+        <li>
+          <router-link to="/" class="hover:text-[#8c122f] hover:scale-105 transition duration-200">
+            Home
+          </router-link>
+        </li>
+        <li><a href="#" class="hover:text-[#8c122f] hover:scale-105 transition duration-200">Products</a></li>
+        <li class="relative">
+          <DropdownCategoriesComponent />
+        </li>
       </ul>
 
       <div class="flex space-x-4 text-lg">
-        <a href="#" class="hover:text-black hover:scale-125 transition duration-300">
+        <a href="#" class="hover:text-[#8c122f] hover:scale-125 transition duration-300">
           <i class="fas fa-search"></i>
         </a>
-        <a href="#" class="hover:text-black hover:scale-125 transition duration-300">
+        <input
+          type="text"
+          placeholder="Search products..."
+          class="px-3 py-1 text-sm rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#8c122f]"
+        />
+        <router-link to="/cart" class="hover:text-[#8c122f] hover:scale-125 transition duration-300">
           <i class="fas fa-shopping-cart"></i>
-        </a>
+        </router-link>
       </div>
     </div>
   </nav>
 </template>
+<script>
+import DropdownCategoriesComponent from '../components/DropdownCategoriesComponent.vue'
+
+export default {
+  components: {
+    DropdownCategoriesComponent,
+  },
+}
+</script>

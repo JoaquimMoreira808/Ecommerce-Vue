@@ -74,5 +74,4 @@ export default {
 </script>
 
 <style scoped>
-/* Pode ajustar se quiser, mas o Tailwind já ajuda bastante */
 </style>
