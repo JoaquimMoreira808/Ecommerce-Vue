@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-[#f0eeee] px-6 pt-10 text-black text-sm">
+  <footer class="bg-[#f0eeee] px-6 pt-10 text-gray-500 text-sm">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-wrap justify-between gap-10">
         <div class="w-full sm:w-[220px]">
@@ -8,23 +8,6 @@
             Founded by lifelong friends Joaquim and André, the e-commerce company Sacys is revolutionizing the global
             market with a product no one believed was possible: Canned Saci.
           </p>
-        </div>
-     
-        <div class="w-full sm:w-[220px]">
-          <h2 class="font-bold text-base mb-4 uppercase">Categories</h2>
-          <ul class="space-y-2 text-gray-500">
-            <li><a href="#" class="hover:text-black hover:scale-105 transition duration-200 inline-block">Clothing</a>
-            </li>
-            <li><a href="#" class="hover:text-black hover:scale-105 transition duration-200 inline-block">Lingerie</a>
-            </li>
-            <li><a href="#" class="hover:text-black hover:scale-105 transition duration-200 inline-block">Babao</a></li>
-            <li><a href="#" class="hover:text-black hover:scale-105 transition duration-200 inline-block">Marcelo</a>
-            </li>
-            <li><a href="#" class="hover:text-black hover:scale-105 transition duration-200 inline-block">Jwellery</a>
-            </li>
-            <li><a href="#" class="hover:text-black hover:scale-105 transition duration-200 inline-block">Jorlan</a>
-            </li>
-          </ul>
         </div>
         
         <div class="w-full sm:w-[220px]">

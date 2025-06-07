@@ -1,55 +1,76 @@
 <template>
-  <div class="flex-1 space-y-4">
-    <div class="flex items-center justify-between bg-white rounded-lg shadow p-4">
-      <div class="flex items-center space-x-4">
-        <img src="" alt="Product" class="w-20 h-20 object-cover rounded" />
-        <div>
-          <h2 class="font-semibold">Name</h2>
-          <p class="font-bold mt-2">R$</p>
-        </div>
-      </div>
-    </div>
-    <div class="flex items-center space-x-2">
-      <button
-        @click="decrement"
-        class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 transition"
-        :disabled="quantity <= 1"
-      >
-        -
-      </button>
-      <span class="min-w-[24px] text-center font-semibold">{{ quantity }}</span>
-      <button
-        @click="increment"
-        class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300 transition"
-      >
-        +
-      </button>    
-      <button class="text-red-500 ml-4 hover:text-red-700 transition">
-        <i class="fas fa-trash"></i>
+  <div class="flex gap-4 items-center border-b py-4">
+    <img :src="image" alt="Product Image" class="w-24 h-24 object-cover rounded" />
+    <div class="flex-1">
+      <h3 class="font-semibold text-lg">{{ title }}</h3>
+      <p class="text-gray-600 flex items-center gap-3 mt-1">
+        Quantity: 
+        <button 
+          @click="removeOne" 
+          class="w-8 h-8 flex justify-center items-center rounded-md border border-gray-300 text-gray-600 hover:bg-gray-200 transition"
+          aria-label="Decrease quantity"
+        >−</button>
+        <span class="px-3 font-medium text-gray-800">{{ localQuantity }}</span>
+        <button 
+          @click="addOne" 
+          class="w-8 h-8 flex justify-center items-center rounded-md border border-gray-300 text-gray-600 hover:bg-gray-200 transition"
+          aria-label="Increase quantity"
+        >+</button>
+      </p>
+      <p class="text-gray-800 font-bold mt-2">US$ {{ (price * localQuantity).toFixed(2) }}</p>
+      <button @click="removeFromCart" class="text-red-500 mt-3 hover:underline font-semibold">
+        Remover
       </button>
     </div>
   </div>
 </template>
+
 <script>
-//script para diminuir e aumentar a quantia dos items adicionados ao carrinho
 export default {
+  name: 'CardProductCartComponent',
+  props: {
+    id: { type: [Number, String], required: true },
+    title: { type: String, required: true },
+    price: { type: Number, required: true },
+    image: { type: String, default: '' },
+    quantity: { type: Number, required: true },
+  },
   data() {
     return {
-      quantity: 1,
+      localQuantity: this.quantity,
     };
   },
-  methods: {
-    increment() {
-      this.quantity++;
+  watch: {
+    quantity(newVal) {
+      this.localQuantity = newVal;
     },
-    decrement() {
-      if (this.quantity > 1) {
-        this.quantity--;
+  },
+  methods: {
+    updateCartQuantity(newQty) {
+      if (newQty < 0) return; // evita quantidade negativa
+      this.localQuantity = newQty;
+      this.$emit('update-quantity', this.id, newQty);
+    },
+
+    addOne() {
+      this.updateCartQuantity(this.localQuantity + 1);
+    },
+
+    removeOne() {
+      if (this.localQuantity === 1) {
+        if (confirm('Sure to remove from cart?')) {
+          this.updateCartQuantity(0);
+        }
+      } else {
+        this.updateCartQuantity(this.localQuantity - 1);
+      }
+    },
+
+    removeFromCart() {
+      if (confirm('Sure to remove from cart?')) {
+        this.updateCartQuantity(0);
       }
     },
   },
 };
 </script>
-
-<style scoped>
-</style>
