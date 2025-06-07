@@ -1,29 +1,38 @@
-# Ecommerce
+Sacy's E-commerce
+Descrição do Projeto e Funcionalidades
+O Sacy's E-commerce é uma aplicação de comércio eletrônico desenvolvida com as Tenologias: Vue.js 3, Vite, Axios e TailwindCSS para consumir a api https://dummyjson.com. O projeto simula um fluxo de compra básico, permitindo que os usuários naveguem por produtos, visualizem detalhes e gerenciem itens em um carrinho de compras interativo.
 
-This template should help get you started developing with Vue 3 in Vite.
+Funcionalidades Principais:
 
-## Recommended IDE Setup
+Página Inicial (/): Exibe a lista de produtos, com funcionalidade de busca e filtro por categorias.
+Página de Detalhes do Produto (/product/:id): Mostra informações detalhadas de cada produto.
+Carrinho de Compras (/cart): Permite adicionar/remover itens e ajustar suas quantidades.
+Navegação e Busca: Barra de navegação com links para home e carrinho, dropdown de categorias e campo de busca.
+Instruções para Rodar a Aplicação Localmente
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Para clonar e executar o Sacy's E-commerce em sua máquina, siga os passos abaixo:
 
-## Customize configuration
+Pré-requisitos:
+É necessário ter o Node.js instalado na sua máquina, preferencialmente na versão 16 ou superior.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Clone o repositório:
+git clone https://github.com/JoaquimMoreira808/Ecommerce-Vue.git
 
-## Project Setup
+Navegue até o diretório do projeto:
+cd Ecommerce-Vue
 
-```sh
-npm install
-```
+Instale as dependências:
+npm install ou yarn install
 
-### Compile and Hot-Reload for Development
+Inicie o servidor de desenvolvimento:
+npm run dev ou yarn dev
 
-```sh
-npm run dev
-```
+A aplicação estará disponível em http://localhost:5173 (ou na porta indicada pelo Vite), após isso
+basta dar control click com o botão esquerdo de seu mouse encima do endereço fornecido que a aplicação 
+estará rodando e visivel em sua maquina.
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+Projeto desenvolvido pelos alunos: 
+André Luis da Silva Reis
+RA: 1987363
+Joaquim Fernando Sant'ana Moreira
+RA: 
