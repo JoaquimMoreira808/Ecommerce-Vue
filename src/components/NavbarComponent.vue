@@ -23,6 +23,7 @@
           <i class="fas fa-search"></i>
         </a>
         <input
+          v-model="searchQuery"
           type="text"
           placeholder="Search products..."
           class="px-3 py-1 text-sm rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#8c122f]"
@@ -41,5 +42,15 @@ export default {
   components: {
     DropdownCategoriesComponent,
   },
-}
+  computed: {
+    searchQuery: {
+      get() {
+        return this.$route.query.q || '';
+      },
+      set(value) {
+        this.$router.push({name: 'home', query: {q: value }});
+      },
+    },
+  },
+ };
 </script>

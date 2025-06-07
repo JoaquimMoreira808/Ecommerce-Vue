@@ -2,7 +2,7 @@
   <div class="flex-1 space-y-4">
     <div class="flex items-center justify-between bg-white rounded-lg shadow p-4">
       <div class="flex items-center space-x-4">
-        <img src="../img/OIP.webp" alt="Product" class="w-20 h-20 object-cover rounded" />
+        <img src="" alt="Product" class="w-20 h-20 object-cover rounded" />
         <div>
           <h2 class="font-semibold">Name</h2>
           <p class="font-bold mt-2">R$</p>
