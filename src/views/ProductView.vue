@@ -137,9 +137,8 @@ export default {
 </script>
 
 <style scoped>
-/* Só um ajuste no SVG das estrelas pra ficar bonitão */
 svg.fill-current polygon {
-  fill: #facc15; /* amarelo */
+  fill: #facc15;
 }
 svg.stroke-current polygon {
   fill: none;
